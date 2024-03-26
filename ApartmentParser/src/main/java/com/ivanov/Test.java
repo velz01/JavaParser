@@ -2,6 +2,9 @@ package com.ivanov;
 
 
 import com.ivanov.util.StringUtils;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 
 import java.io.IOException;
 
@@ -10,14 +13,8 @@ public class Test {
     public static void main(String[] args) throws IOException {
         StringUtils util = StringUtils.getInstance();
 
-        System.out.println(util.extractDomain("https://www.google.com/search?q="));
+        Document s = Jsoup.connect("https://ultra-details.ru/search/?search=iphone%207").get();
+        System.out.println(s);
 
-        /*String link = "https://www.etsk.ru/product/57202/";
-        link = link.substring(0, link.indexOf("/", 10));
-        System.out.println(link);
-        //Commenting driver.quit() for user to easily verify the links
-        //driver.quit();*/
-    }
-
-}
+}}
 //searchResult_2021-01-01_13:20:00.txt

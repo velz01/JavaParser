@@ -1,18 +1,18 @@
-package com.ivanov.service;
+package com.ivanov.model.dao;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class IOService {
+public class IOFactory {
 
-    private static IOService instance;
-    public IOService() {}
+    private static IOFactory instance;
+    public IOFactory() {}
 
-    public static IOService getInstance() {
+    public static IOFactory getInstance() {
         if (instance == null) {
-            instance = new IOService();
+            instance = new IOFactory();
         }
         return instance;
     }
@@ -24,6 +24,7 @@ public class IOService {
     public Scanner obtainReader(File file) throws FileNotFoundException {
         return new Scanner(file);
     }
+
     public PrintWriter obtainWriter(File file) throws FileNotFoundException {
         return new PrintWriter(file);
     }
